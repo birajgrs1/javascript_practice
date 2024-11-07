@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      #btn {
+        height: 60vh;
+        width: 60vh;
+        font-size: 25px;
+        border: none;
+        border-radius: 50%;
+      }
+    
+      .odd {
+        background-color: rgb(25, 25, 238);
+      }
+      .even {
+        background-color: rgb(209, 108, 36);
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" onclick="pressBtn();">0</button>
+
+    <script>
+      /*
+        Create a Button which shows the number how many times it has been pressed. 
+        • Also, it has different colors for when it has been pressed odd or even times.
+        • The click count should also survive browser refresh.
+      */
+
+      let noOfTimesClicked = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+
+      window.onload = function () {
+        updateButton();
+      };
+
+      function pressBtn() {
+        noOfTimesClicked++;
+        localStorage.setItem('clickCount', noOfTimesClicked); 
+        updateButton();
+      }
+
+      function updateButton() {
+        let button = document.querySelector('#btn');
+        button.innerText = noOfTimesClicked;
+
+        if (noOfTimesClicked % 2 === 0) {
+          button.classList.remove('odd');
+          button.classList.add('even');
+        } else {
+          button.classList.remove('even');
+          button.classList.add('odd');
+        }
+      }
+    </script>
+  </body>
+</html>

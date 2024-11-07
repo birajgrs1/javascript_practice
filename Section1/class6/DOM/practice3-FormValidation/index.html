@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="jobApplicationForm" enctype="multipart/form-data">
+        <h2>Job Application Form</h2>
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="text" id="phone" required>
+
+        <label for="linkedin">LinkedIn Profile</label>
+        <input type="url" id="linkedin" placeholder="https://www.linkedin.com/in/username" required>
+
+        <label for="experience">Years of Experience</label>
+        <input type="number" id="experience" min="0" max="50" required>
+
+        <label for="resume">Resume (PDF/DOC/DOCX)</label>
+        <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

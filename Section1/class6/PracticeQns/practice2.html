@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting</title>
+</head>
+<body>
+    
+    <script>
+        // Display good morning, afternoon, and evening based on current hour
+        //Add name to the output too.
+        let date = new Date();
+        let dateInHrs = date.getHours(); 
+        let name = "Biraj"; 
+
+        let greeting;
+        if (dateInHrs >= 4 && dateInHrs < 12) {
+            greeting = "Good Morning";
+        } else if (dateInHrs >= 12 && dateInHrs < 18) {
+            greeting = "Good Afternoon";
+        } else {
+            greeting = "Good Evening";
+        }
+
+        document.write(`${greeting}, ${name}!`);
+    </script>
+
+</body>
+</html>

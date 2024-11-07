@@ -1,0 +1,45 @@
+async and await simplify working with Promises, making asynchronous code easier to read and write.
+
+1. async Function:
+A function declared with async returns a Promise, allowing the use of await inside it.
+Syntax:
+
+async function myFunction() {
+    // code
+}
+
+
+2. await Expression:
+await pauses the execution of the async function until the Promise resolves.
+Can only be used inside async functions.
+
+Syntax:
+
+const result = await myPromise;
+
+
+3. Error Handling:
+Use try...catch to handle errors in async functions.
+
+Syntax:
+
+async function myFunction() {
+    try {
+        const result = await myPromise;
+    } catch (error) {
+        // handle error
+    }
+}
+
+4. Return Value:
+The value returned by an async function is wrapped in a Promise.
+
+Uses:
+---> Simplifies asynchronous code, improving readability.
+---> Handles Promises easily by waiting for resolution.
+---> Ensures sequential execution of asynchronous tasks.
+---> Facilitates parallel execution with Promise.all().
+---> Improves error handling using try...catch.
+---> Enhances user experience with loading indicators.
+---> Simplifies handling of API requests and responses.
+---> Manages asynchronous file operations in Node.js.
