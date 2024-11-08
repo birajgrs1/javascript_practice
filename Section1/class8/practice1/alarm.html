@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm </title>
+</head>
+<body>
+    <h1>Simple Alarm Timer</h1>
+    <label for="time">Set Alarm (in seconds):</label>
+    <input type="number" id="time" min="1" placeholder="Enter time in seconds">
+    <button onclick="setAlarm()">Set Alarm</button>
+    <button onclick="stopAlarm()">Stop Alarm</button>
+    <p id="message"></p>
+
+    <script src="./alarm.js"></script>
+</body>
+</html>
