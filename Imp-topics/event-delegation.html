@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit Clicker</title>
+   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    ul.fruits {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+     ul.fruits li {
+      background: #e0f7fa;
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    ul.fruits li:hover {
+      background: #b2ebf2;
+      transform: scale(1.02);
+    }
+
+    ul.fruits li.selected {
+      background: #00bcd4;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .showFruits {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .showFruits span {
+      font-weight: bold;
+      color: #00796b;
+    }  
+  </style> 
+</head>
+<body>
+  <div class="container">
+    <h2>Click a Fruit</h2>
+    <div class="list">
+      <ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Mango</li>
+        <li>Watermelon</li>
+      </ul>
+    </div>
+    <div class="showFruits">
+      You clicked on: <span>None</span>
+    </div>
+  </div>
+
+  <script>
+    const listContainer = document.querySelector('.list');
+    const output = document.querySelector('.showFruits span');
+
+    listContainer.addEventListener('click', function(e) {
+      if (e.target.tagName === 'LI') {
+        document.querySelectorAll('.fruits li').forEach(item => {
+          item.classList.remove('selected');
+        });
+
+        e.target.classList.add('selected');
+
+        output.textContent = e.target.textContent;
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+<!--
+    Event Delegation:
+    In this approach, the event listener is attached to the parent element (e.g., the <ul> in this case).
+    When a child element is clicked, the event is propagated to the parent element, which then handles the event.
+
+ -->
